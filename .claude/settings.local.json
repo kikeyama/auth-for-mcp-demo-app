@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(npm --version)",
-      "Bash(npx create-next-app@latest *)"
+      "Bash(npx create-next-app@latest *)",
+      "Bash(npm install *)",
+      "Bash(next --version)",
+      "Bash(npx tsc *)",
+      "Bash(npx prisma *)",
+      "Bash(npm run *)"
     ]
   }
 }
