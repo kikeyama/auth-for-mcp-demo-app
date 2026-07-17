@@ -106,7 +106,7 @@ export default function McpDebugPage() {
   const [records, setRecords] = useState<TokenExchangeRecord[]>([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
-  const [autoRefresh, setAutoRefresh] = useState(true);
+  const [autoRefresh, setAutoRefresh] = useState(false);
   const [collapsedIds, setCollapsedIds] = useState<Set<string>>(new Set());
 
   const load = useCallback(() => {
@@ -145,22 +145,22 @@ export default function McpDebugPage() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
+    <div className="max-w-6xl mx-auto space-y-6">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-xl font-bold" style={{ color: 'var(--foreground)' }}>MCP トークンビューア</h1>
           <p className="text-sm mt-1" style={{ color: 'var(--muted)' }}>
-            MCP Client から受け取ったトークンと、OBO Token Exchange で交換した API トークンを表示します（デモ用途）。
+            MCP Client から受け取ったトークンと、On-Behalf-Of (OBO) Token Exchange で交換した API トークンを表示します（デモ用途）。
           </p>
         </div>
-        <div className="flex items-center gap-3">
-          <label className="flex items-center gap-2 text-xs" style={{ color: 'var(--muted)' }}>
+        <div className="flex items-center gap-3 flex-shrink-0">
+          <label className="flex items-center gap-2 text-xs whitespace-nowrap" style={{ color: 'var(--muted)' }}>
             <input type="checkbox" checked={autoRefresh} onChange={(e) => setAutoRefresh(e.target.checked)} />
             自動更新
           </label>
           <button
             onClick={load}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-opacity hover:opacity-80"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-opacity hover:opacity-80"
             style={{ background: 'var(--surface)', color: 'var(--foreground)', border: '1px solid var(--border)' }}
           >
             <RefreshCw className="w-3.5 h-3.5" /> 更新
