@@ -2,13 +2,14 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, PieChart, ArrowLeftRight, History, TrendingUp } from 'lucide-react';
+import { LayoutDashboard, PieChart, ArrowLeftRight, History, TrendingUp, KeyRound } from 'lucide-react';
 
 const links = [
   { href: '/dashboard', label: 'ダッシュボード', icon: LayoutDashboard },
   { href: '/dashboard/portfolio', label: 'ポートフォリオ', icon: PieChart },
   { href: '/dashboard/trade', label: '取引', icon: ArrowLeftRight },
   { href: '/dashboard/history', label: '取引履歴', icon: History },
+  { href: '/dashboard/mcp-debug', label: 'MCPトークン', icon: KeyRound },
 ];
 
 export default function Sidebar() {

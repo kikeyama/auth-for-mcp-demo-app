@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  logging: {
+    incomingRequests: {
+      // MCP トークンビューアのポーリングでログが埋まるのを防ぐ
+      ignore: [/^\/api\/mcp-debug/],
+    },
+  },
   images: {
     remotePatterns: [
       { hostname: 's.gravatar.com' },

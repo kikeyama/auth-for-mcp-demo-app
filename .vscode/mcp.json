@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "wealthvision_local": {
+      "type": "http",
+      "url": "http://localhost:4005/mcp",
+      "oauth": {
+        "clientId": "https://vscode.dev/oauth/client-metadata.json"
+      }
+    }
+  }
+}
