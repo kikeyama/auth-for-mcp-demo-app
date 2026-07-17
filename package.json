@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently -n next,tx,users,assets,trades,mcp -c cyan,yellow,magenta,blue,green,red \"next dev\" \"npm run dev --prefix services/transactions\" \"npm run dev --prefix services/users\" \"npm run dev --prefix services/assets\" \"npm run dev --prefix services/trades\" \"npm run dev --prefix services/mcp\"",
-    "dev:next": "next dev",
+    "dev": "concurrently -n next,tx,users,assets,trades,mcp -c cyan,yellow,magenta,blue,green,red \"next dev -p 4000\" \"npm run dev --prefix services/transactions\" \"npm run dev --prefix services/users\" \"npm run dev --prefix services/assets\" \"npm run dev --prefix services/trades\" \"npm run dev --prefix services/mcp\"",
+    "dev:next": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
